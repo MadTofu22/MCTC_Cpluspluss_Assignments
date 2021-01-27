@@ -1,0 +1,941 @@
+%PDF-1.3
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/Annots []
+/Contents 4 0 R>>
+endobj
+4 0 obj
+<</Length 23491>>
+stream
+q
+1.000 0.000 0.000 -1.000 0.000 841.890 cm
+2 J
+0.57 w
+BT /F1 10.00 Tf ET
+0 G
+0 g
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 37.02 Tm 0 Tr (  1  ) Tj  ET Q
+q 0.627 0.627 0.627 rg BT 1 0 0 -1 58.35 37.02 Tm 0 Tr (/*  Program: A3P4 - Elevator Sim) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 48.36 Tm 0 Tr (  2  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 48.36 Tm 0 Tr (    ) Tj  ET Q
+q 0.627 0.627 0.627 rg BT 1 0 0 -1 82.35 48.36 Tm 0 Tr (Author: Tom Stutler) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 59.70 Tm 0 Tr (  3  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 59.70 Tm 0 Tr (    ) Tj  ET Q
+q 0.627 0.627 0.627 rg BT 1 0 0 -1 82.35 59.70 Tm 0 Tr (Last Date Modified: 3/19/15) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 71.04 Tm 0 Tr (  4  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 82.37 Tm 0 Tr (  5  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 82.37 Tm 0 Tr (    ) Tj  ET Q
+q 0.627 0.627 0.627 rg BT 1 0 0 -1 82.35 82.37 Tm 0 Tr (The intent of this program is to display and track the position of three) Tj  ET Q
+q 0.627 0.627 0.627 rg BT 1 0 0 -1 28.35 93.71 Tm 0 Tr (elevators, starting at floor 1,) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 105.05 Tm 0 Tr (  6  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 105.05 Tm 0 Tr (    ) Tj  ET Q
+q 0.627 0.627 0.627 rg BT 1 0 0 -1 82.35 105.05 Tm 0 Tr (to a user that then picks one of the three elevators to operate, telling it) Tj  ET Q
+q 0.627 0.627 0.627 rg BT 1 0 0 -1 28.35 116.39 Tm 0 Tr (which floor, 1-10, it wants to go to.) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 127.73 Tm 0 Tr (  7  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 139.07 Tm 0 Tr (  8  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 139.07 Tm 0 Tr (    ) Tj  ET Q
+q 0.627 0.627 0.627 rg BT 1 0 0 -1 82.35 139.07 Tm 0 Tr (This program assumes that the user is always on floor 1 regardless of the) Tj  ET Q
+q 0.627 0.627 0.627 rg BT 1 0 0 -1 28.35 150.41 Tm 0 Tr (elevator the user picked to operate.) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 161.74 Tm 0 Tr (  9  ) Tj  ET Q
+q 0.627 0.627 0.627 rg BT 1 0 0 -1 58.35 161.74 Tm 0 Tr (*/) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 173.08 Tm 0 Tr ( 10  ) Tj  ET Q
+q 0.745 0.745 0.902 rg BT 1 0 0 -1 58.35 173.08 Tm 0 Tr (//#define NDEBUG) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 184.42 Tm 0 Tr ( 11  ) Tj  ET Q
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 58.35 184.42 Tm 0 Tr (#include <iostream>) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 195.76 Tm 0 Tr ( 12  ) Tj  ET Q
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 58.35 195.76 Tm 0 Tr (#include <cassert>) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 207.10 Tm 0 Tr ( 13  ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 58.35 207.10 Tm 0 Tr (using namespace ) Tj  ET Q
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 154.35 207.10 Tm 0 Tr (std) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 172.35 207.10 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 218.44 Tm 0 Tr ( 14  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 229.78 Tm 0 Tr ( 15  ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 58.35 229.78 Tm 0 Tr (const int ) Tj  ET Q
+BT /F1 10.00 Tf ET
+1.000 1.000 1.000 rg
+118.35 221.11 102.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 118.35 229.78 Tm 0 Tr (NUM_OF_ELEVATORS ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 220.35 229.78 Tm 0 Tr (= ) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 232.35 229.78 Tm 0 Tr (3) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 238.35 229.78 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 241.11 Tm 0 Tr ( 16  ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 58.35 241.11 Tm 0 Tr (class ) Tj  ET Q
+BT /F1 10.00 Tf ET
+1.000 1.000 1.000 rg
+94.35 232.44 48.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 94.35 241.11 Tm 0 Tr (elevator) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 252.45 Tm 0 Tr ( 17  ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 58.35 252.45 Tm 0 Tr ({) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 263.79 Tm 0 Tr ( 18  ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 58.35 263.79 Tm 0 Tr (public) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 94.35 263.79 Tm 0 Tr (:) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 275.13 Tm 0 Tr ( 19  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 275.13 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+82.35 266.46 48.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 82.35 275.13 Tm 0 Tr (elevator) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 130.35 275.13 Tm 0 Tr (\(\) : ) Tj  ET Q
+1.000 1.000 1.000 rg
+160.35 266.46 48.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 160.35 275.13 Tm 0 Tr (position) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 208.35 275.13 Tm 0 Tr (\() Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 214.35 275.13 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 220.35 275.13 Tm 0 Tr (\), ) Tj  ET Q
+1.000 1.000 1.000 rg
+238.35 266.46 66.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 238.35 275.13 Tm 0 Tr (destination) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 304.35 275.13 Tm 0 Tr (\() Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 310.35 275.13 Tm 0 Tr (0) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 316.35 275.13 Tm 0 Tr (\) {}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 286.47 Tm 0 Tr ( 20  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 286.47 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.502 0.502 1.000 rg BT 1 0 0 -1 82.35 286.47 Tm 0 Tr (///Initializes position to 1.) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 297.81 Tm 0 Tr ( 21  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 297.81 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 82.35 297.81 Tm 0 Tr (void ) Tj  ET Q
+BT /F1 10.00 Tf ET
+1.000 1.000 1.000 rg
+112.35 289.14 84.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 112.35 297.81 Tm 0 Tr (serviceRequest) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 196.35 297.81 Tm 0 Tr (\() Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 202.35 297.81 Tm 0 Tr (int ) Tj  ET Q
+BT /F1 10.00 Tf ET
+1.000 1.000 1.000 rg
+226.35 289.14 96.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 226.35 297.81 Tm 0 Tr (destinationParam) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 322.35 297.81 Tm 0 Tr (\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 309.15 Tm 0 Tr ( 22  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 309.15 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.502 0.502 1.000 rg BT 1 0 0 -1 82.35 309.15 Tm 0 Tr (///Moves the elevator from position to destination.) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 320.48 Tm 0 Tr ( 23  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 320.48 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 82.35 320.48 Tm 0 Tr (int ) Tj  ET Q
+BT /F1 10.00 Tf ET
+1.000 1.000 1.000 rg
+106.35 311.81 84.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 106.35 320.48 Tm 0 Tr (returnPosition) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 190.35 320.48 Tm 0 Tr (\(\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 331.82 Tm 0 Tr ( 24  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 331.82 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.502 0.502 1.000 rg BT 1 0 0 -1 82.35 331.82 Tm 0 Tr (///Returns the current position of the elevator.) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 343.16 Tm 0 Tr ( 25  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 354.50 Tm 0 Tr ( 26  ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 58.35 354.50 Tm 0 Tr (private) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 100.35 354.50 Tm 0 Tr (:) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 365.84 Tm 0 Tr ( 27  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 365.84 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 82.35 365.84 Tm 0 Tr (int ) Tj  ET Q
+BT /F1 10.00 Tf ET
+1.000 1.000 1.000 rg
+106.35 357.17 48.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 106.35 365.84 Tm 0 Tr (position) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 154.35 365.84 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 377.18 Tm 0 Tr ( 28  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 377.18 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 82.35 377.18 Tm 0 Tr (int ) Tj  ET Q
+BT /F1 10.00 Tf ET
+1.000 1.000 1.000 rg
+106.35 368.51 66.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 106.35 377.18 Tm 0 Tr (destination) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 172.35 377.18 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 388.52 Tm 0 Tr ( 29  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 399.85 Tm 0 Tr ( 30  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 399.85 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 82.35 399.85 Tm 0 Tr (void ) Tj  ET Q
+BT /F1 10.00 Tf ET
+1.000 1.000 1.000 rg
+112.35 391.18 60.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 112.35 399.85 Tm 0 Tr (showStatus) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 172.35 399.85 Tm 0 Tr (\(\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 411.19 Tm 0 Tr ( 31  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 411.19 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.502 0.502 1.000 rg BT 1 0 0 -1 82.35 411.19 Tm 0 Tr (///Displays the current action of the elevator.) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 422.53 Tm 0 Tr ( 32  ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 58.35 422.53 Tm 0 Tr (};) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 433.87 Tm 0 Tr ( 33  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 445.21 Tm 0 Tr ( 34  ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 58.35 445.21 Tm 0 Tr (void ) Tj  ET Q
+BT /F1 10.00 Tf ET
+1.000 1.000 1.000 rg
+88.35 436.54 96.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 88.35 445.21 Tm 0 Tr (displayElevators) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 184.35 445.21 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+190.35 436.54 138.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 190.35 445.21 Tm 0 Tr (elevator elevatorsParam) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 328.35 445.21 Tm 0 Tr ([]\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 456.55 Tm 0 Tr ( 35  ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.502 0.502 1.000 rg BT 1 0 0 -1 58.35 456.55 Tm 0 Tr (///Displays the current status of the three elevators.) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 467.89 Tm 0 Tr ( 36  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 479.22 Tm 0 Tr ( 37  ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 58.35 479.22 Tm 0 Tr (int ) Tj  ET Q
+BT /F1 10.00 Tf ET
+1.000 1.000 1.000 rg
+82.35 470.55 24.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 82.35 479.22 Tm 0 Tr (main) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 106.35 479.22 Tm 0 Tr (\(\)) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 490.56 Tm 0 Tr ( 38  ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 58.35 490.56 Tm 0 Tr ({) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 501.90 Tm 0 Tr ( 39  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 501.90 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+82.35 493.23 108.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 82.35 501.90 Tm 0 Tr (elevator elevators) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 190.35 501.90 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+196.35 493.23 96.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 196.35 501.90 Tm 0 Tr (NUM_OF_ELEVATORS) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 292.35 501.90 Tm 0 Tr (];) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 513.24 Tm 0 Tr ( 40  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 513.24 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 82.35 513.24 Tm 0 Tr (int ) Tj  ET Q
+BT /F1 10.00 Tf ET
+1.000 1.000 1.000 rg
+106.35 504.57 84.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 106.35 513.24 Tm 0 Tr (elevatorChoice) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 190.35 513.24 Tm 0 Tr (, ) Tj  ET Q
+1.000 1.000 1.000 rg
+202.35 504.57 66.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 202.35 513.24 Tm 0 Tr (floorChoice) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 268.35 513.24 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 524.58 Tm 0 Tr ( 41  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 524.58 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 82.35 524.58 Tm 0 Tr (bool ) Tj  ET Q
+BT /F1 10.00 Tf ET
+1.000 1.000 1.000 rg
+112.35 515.91 36.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 112.35 524.58 Tm 0 Tr (repeat) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 148.35 524.58 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 535.92 Tm 0 Tr ( 42  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 547.26 Tm 0 Tr ( 43  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 547.26 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 82.35 547.26 Tm 0 Tr (do) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 558.59 Tm 0 Tr ( 44  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 558.59 Tm 0 Tr (    ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 82.35 558.59 Tm 0 Tr ({) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 569.93 Tm 0 Tr ( 45  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 569.93 Tm 0 Tr (        ) Tj  ET Q
+q 0.745 0.745 0.902 rg BT 1 0 0 -1 106.35 569.93 Tm 0 Tr (//Show the user the current state of the elevators.) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 581.27 Tm 0 Tr ( 46  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 581.27 Tm 0 Tr (        ) Tj  ET Q
+1.000 1.000 1.000 rg
+106.35 572.60 96.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 106.35 581.27 Tm 0 Tr (displayElevators) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 202.35 581.27 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+208.35 572.60 54.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 208.35 581.27 Tm 0 Tr (elevators) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 262.35 581.27 Tm 0 Tr (\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 592.61 Tm 0 Tr ( 47  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 603.95 Tm 0 Tr ( 48  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 603.95 Tm 0 Tr (        ) Tj  ET Q
+q 0.745 0.745 0.902 rg BT 1 0 0 -1 106.35 603.95 Tm 0 Tr (//Prompt user to pick an elevator or exit.) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 615.29 Tm 0 Tr ( 49  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 615.29 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 106.35 615.29 Tm 0 Tr (cout ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 615.29 Tm 0 Tr (<< ) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 154.35 615.29 Tm 0 Tr ("Which elevator do you want \(1=A, 2=B, 3=C, or other to exit\)? ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 538.35 615.29 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 626.63 Tm 0 Tr ( 50  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 626.63 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 106.35 626.63 Tm 0 Tr (cin ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 130.35 626.63 Tm 0 Tr (>> ) Tj  ET Q
+1.000 1.000 1.000 rg
+148.35 617.96 84.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 148.35 626.63 Tm 0 Tr (elevatorChoice) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 232.35 626.63 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 637.96 Tm 0 Tr ( 51  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 649.30 Tm 0 Tr ( 52  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 649.30 Tm 0 Tr (        ) Tj  ET Q
+q 0.745 0.745 0.902 rg BT 1 0 0 -1 106.35 649.30 Tm 0 Tr (//Check if elevator is at floor 1, if not move it to floor 1.) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 660.64 Tm 0 Tr ( 53  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 660.64 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 106.35 660.64 Tm 0 Tr (if ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 124.35 660.64 Tm 0 Tr (\(\() Tj  ET Q
+1.000 1.000 1.000 rg
+136.35 651.97 54.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 136.35 660.64 Tm 0 Tr (elevators) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 190.35 660.64 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+196.35 651.97 84.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 196.35 660.64 Tm 0 Tr (elevatorChoice) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 280.35 660.64 Tm 0 Tr (-) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 286.35 660.64 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 292.35 660.64 Tm 0 Tr (].) Tj  ET Q
+1.000 1.000 1.000 rg
+304.35 651.97 84.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 304.35 660.64 Tm 0 Tr (returnPosition) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 388.35 660.64 Tm 0 Tr (\(\) > ) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 418.35 660.64 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 424.35 660.64 Tm 0 Tr (\) && \() Tj  ET Q
+1.000 1.000 1.000 rg
+460.35 651.97 54.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 460.35 660.64 Tm 0 Tr (elevators) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 514.35 660.64 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+28.35 663.31 84.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 671.98 Tm 0 Tr (elevatorChoice) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 112.35 671.98 Tm 0 Tr (-) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 118.35 671.98 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 124.35 671.98 Tm 0 Tr (].) Tj  ET Q
+1.000 1.000 1.000 rg
+136.35 663.31 84.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 136.35 671.98 Tm 0 Tr (returnPosition) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 220.35 671.98 Tm 0 Tr (\(\) <= ) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 256.35 671.98 Tm 0 Tr (10) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 268.35 671.98 Tm 0 Tr (\)\) {) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 683.32 Tm 0 Tr ( 54  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 683.32 Tm 0 Tr (            ) Tj  ET Q
+1.000 1.000 1.000 rg
+130.35 674.65 36.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 130.35 683.32 Tm 0 Tr (assert) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 166.35 683.32 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+172.35 674.65 54.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 172.35 683.32 Tm 0 Tr (elevators) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 226.35 683.32 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+232.35 674.65 84.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 232.35 683.32 Tm 0 Tr (elevatorChoice) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 316.35 683.32 Tm 0 Tr (-) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 322.35 683.32 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 328.35 683.32 Tm 0 Tr (].) Tj  ET Q
+1.000 1.000 1.000 rg
+340.35 674.65 84.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 340.35 683.32 Tm 0 Tr (returnPosition) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 424.35 683.32 Tm 0 Tr (\(\) != ) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 460.35 683.32 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 466.35 683.32 Tm 0 Tr (\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 694.66 Tm 0 Tr ( 55  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 694.66 Tm 0 Tr (            ) Tj  ET Q
+1.000 1.000 1.000 rg
+130.35 685.99 54.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 130.35 694.66 Tm 0 Tr (elevators) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 184.35 694.66 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+190.35 685.99 84.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 190.35 694.66 Tm 0 Tr (elevatorChoice) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 274.35 694.66 Tm 0 Tr (-) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 280.35 694.66 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 286.35 694.66 Tm 0 Tr (].) Tj  ET Q
+1.000 1.000 1.000 rg
+298.35 685.99 84.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 298.35 694.66 Tm 0 Tr (serviceRequest) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 382.35 694.66 Tm 0 Tr (\() Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 388.35 694.66 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 394.35 694.66 Tm 0 Tr (\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 706.00 Tm 0 Tr ( 56  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 706.00 Tm 0 Tr (        ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 106.35 706.00 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 717.33 Tm 0 Tr ( 57  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 728.67 Tm 0 Tr ( 58  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 728.67 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 106.35 728.67 Tm 0 Tr (if ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 124.35 728.67 Tm 0 Tr (\(\() Tj  ET Q
+1.000 1.000 1.000 rg
+136.35 720.00 90.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 136.35 728.67 Tm 0 Tr (elevatorChoice ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 226.35 728.67 Tm 0 Tr (== ) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 244.35 728.67 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 250.35 728.67 Tm 0 Tr (\) || \() Tj  ET Q
+1.000 1.000 1.000 rg
+286.35 720.00 90.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 286.35 728.67 Tm 0 Tr (elevatorChoice ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 376.35 728.67 Tm 0 Tr (== ) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 394.35 728.67 Tm 0 Tr (2) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 400.35 728.67 Tm 0 Tr (\) || \() Tj  ET Q
+1.000 1.000 1.000 rg
+436.35 720.00 84.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 436.35 728.67 Tm 0 Tr (elevatorChoice) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 520.35 728.67 Tm 0 Tr (==) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 532.35 728.67 Tm 0 Tr (3) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 538.35 728.67 Tm 0 Tr (\)\) {) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 740.01 Tm 0 Tr ( 59  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 740.01 Tm 0 Tr (            ) Tj  ET Q
+q 0.745 0.745 0.902 rg BT 1 0 0 -1 130.35 740.01 Tm 0 Tr (//Prompt user for a floor to go to.) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 751.35 Tm 0 Tr ( 60  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 751.35 Tm 0 Tr (            ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 130.35 751.35 Tm 0 Tr (cout ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 160.35 751.35 Tm 0 Tr (<< ) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 178.35 751.35 Tm 0 Tr ("Which floor do you want? ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 340.35 751.35 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 762.69 Tm 0 Tr ( 61  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 762.69 Tm 0 Tr (            ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 130.35 762.69 Tm 0 Tr (cin ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 154.35 762.69 Tm 0 Tr (>> ) Tj  ET Q
+1.000 1.000 1.000 rg
+172.35 754.02 66.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 172.35 762.69 Tm 0 Tr (floorChoice) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 238.35 762.69 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 774.03 Tm 0 Tr ( 62  ) Tj  ET Q
+Q
+
+endstream
+endobj
+5 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/Annots []
+/Contents 6 0 R>>
+endobj
+6 0 obj
+<</Length 27404>>
+stream
+q
+1.000 0.000 0.000 -1.000 0.000 841.890 cm
+2 J
+0.57 w
+BT /F1 10.00 Tf ET
+0 G
+1.000 1.000 1.000 rg
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 37.02 Tm 0 Tr ( 63  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 37.02 Tm 0 Tr (                ) Tj  ET Q
+q 0.745 0.745 0.902 rg BT 1 0 0 -1 154.35 37.02 Tm 0 Tr (//Move the human to its petty destination.) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 48.36 Tm 0 Tr ( 64  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 48.36 Tm 0 Tr (                ) Tj  ET Q
+1.000 1.000 1.000 rg
+154.35 39.69 54.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 154.35 48.36 Tm 0 Tr (elevators) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 208.35 48.36 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+214.35 39.69 84.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 214.35 48.36 Tm 0 Tr (elevatorChoice) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 298.35 48.36 Tm 0 Tr (-) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 304.35 48.36 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 310.35 48.36 Tm 0 Tr (].) Tj  ET Q
+1.000 1.000 1.000 rg
+322.35 39.69 84.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 322.35 48.36 Tm 0 Tr (serviceRequest) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 406.35 48.36 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+412.35 39.69 66.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 412.35 48.36 Tm 0 Tr (floorChoice) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 478.35 48.36 Tm 0 Tr (\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 59.70 Tm 0 Tr ( 65  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 59.70 Tm 0 Tr (                ) Tj  ET Q
+1.000 1.000 1.000 rg
+154.35 51.03 42.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 154.35 59.70 Tm 0 Tr (repeat ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 196.35 59.70 Tm 0 Tr (= ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 208.35 59.70 Tm 0 Tr (true) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 232.35 59.70 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 71.04 Tm 0 Tr ( 66  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 71.04 Tm 0 Tr (        ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 106.35 71.04 Tm 0 Tr (} ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 118.35 71.04 Tm 0 Tr (else ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 148.35 71.04 Tm 0 Tr ({) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 82.37 Tm 0 Tr ( 67  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 82.37 Tm 0 Tr (            ) Tj  ET Q
+1.000 1.000 1.000 rg
+130.35 73.70 42.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 130.35 82.37 Tm 0 Tr (repeat ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 172.35 82.37 Tm 0 Tr (= ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 184.35 82.37 Tm 0 Tr (false) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 214.35 82.37 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 93.71 Tm 0 Tr ( 68  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 93.71 Tm 0 Tr (        ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 106.35 93.71 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 105.05 Tm 0 Tr ( 69  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 105.05 Tm 0 Tr (    ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 82.35 105.05 Tm 0 Tr (} ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 94.35 105.05 Tm 0 Tr (while ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 130.35 105.05 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+136.35 96.38 42.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 136.35 105.05 Tm 0 Tr (repeat ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 178.35 105.05 Tm 0 Tr (== ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 196.35 105.05 Tm 0 Tr (true) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 220.35 105.05 Tm 0 Tr (\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 116.39 Tm 0 Tr ( 70  ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 58.35 116.39 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 127.73 Tm 0 Tr ( 71  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 139.07 Tm 0 Tr ( 72  ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 58.35 139.07 Tm 0 Tr (void ) Tj  ET Q
+BT /F1 10.00 Tf ET
+1.000 1.000 1.000 rg
+88.35 130.40 96.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 88.35 139.07 Tm 0 Tr (displayElevators) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 184.35 139.07 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+190.35 130.40 138.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 190.35 139.07 Tm 0 Tr (elevator elevatorsParam) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 328.35 139.07 Tm 0 Tr ([]\)) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 150.41 Tm 0 Tr ( 73  ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 58.35 150.41 Tm 0 Tr ({) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 161.74 Tm 0 Tr ( 74  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 161.74 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 82.35 161.74 Tm 0 Tr (cout ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 112.35 161.74 Tm 0 Tr (<< ) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 130.35 161.74 Tm 0 Tr ("Elevator Status\\n") Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 173.08 Tm 0 Tr ( 75  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 173.08 Tm 0 Tr (         ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 112.35 173.08 Tm 0 Tr (<< ) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 130.35 173.08 Tm 0 Tr ("A\\tB\\tC\\n") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 196.35 173.08 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 184.42 Tm 0 Tr ( 76  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 195.76 Tm 0 Tr ( 77  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 195.76 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 82.35 195.76 Tm 0 Tr (for ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 106.35 195.76 Tm 0 Tr (\() Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 112.35 195.76 Tm 0 Tr (int ) Tj  ET Q
+BT /F1 10.00 Tf ET
+1.000 1.000 1.000 rg
+136.35 187.09 6.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 136.35 195.76 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 142.35 195.76 Tm 0 Tr (=) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 148.35 195.76 Tm 0 Tr (0) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 154.35 195.76 Tm 0 Tr (; ) Tj  ET Q
+1.000 1.000 1.000 rg
+166.35 187.09 12.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 166.35 195.76 Tm 0 Tr (i ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 178.35 195.76 Tm 0 Tr (< ) Tj  ET Q
+1.000 1.000 1.000 rg
+190.35 187.09 96.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 190.35 195.76 Tm 0 Tr (NUM_OF_ELEVATORS) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 286.35 195.76 Tm 0 Tr (; ) Tj  ET Q
+1.000 1.000 1.000 rg
+298.35 187.09 6.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 298.35 195.76 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 304.35 195.76 Tm 0 Tr (++\) {) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 207.10 Tm 0 Tr ( 78  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 207.10 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 106.35 207.10 Tm 0 Tr (cout ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 207.10 Tm 0 Tr (<< ) Tj  ET Q
+1.000 1.000 1.000 rg
+154.35 198.43 84.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 154.35 207.10 Tm 0 Tr (elevatorsParam) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 238.35 207.10 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+244.35 198.43 6.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 244.35 207.10 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 250.35 207.10 Tm 0 Tr (].) Tj  ET Q
+1.000 1.000 1.000 rg
+262.35 198.43 84.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 262.35 207.10 Tm 0 Tr (returnPosition) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 346.35 207.10 Tm 0 Tr (\(\)) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 218.44 Tm 0 Tr ( 79  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 218.44 Tm 0 Tr (             ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 218.44 Tm 0 Tr (<< ) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 154.35 218.44 Tm 0 Tr ("\\t") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 178.35 218.44 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 229.78 Tm 0 Tr ( 80  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 229.78 Tm 0 Tr (    ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 82.35 229.78 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 241.11 Tm 0 Tr ( 81  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 252.45 Tm 0 Tr ( 82  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 252.45 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 82.35 252.45 Tm 0 Tr (cout ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 112.35 252.45 Tm 0 Tr (<< ) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 130.35 252.45 Tm 0 Tr ("\\n") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 154.35 252.45 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 263.79 Tm 0 Tr ( 83  ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 58.35 263.79 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 275.13 Tm 0 Tr ( 84  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 286.47 Tm 0 Tr ( 85  ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 58.35 286.47 Tm 0 Tr (void ) Tj  ET Q
+BT /F1 10.00 Tf ET
+1.000 1.000 1.000 rg
+88.35 277.80 48.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 88.35 286.47 Tm 0 Tr (elevator) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 286.47 Tm 0 Tr (::) Tj  ET Q
+1.000 1.000 1.000 rg
+148.35 277.80 84.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 148.35 286.47 Tm 0 Tr (serviceRequest) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 232.35 286.47 Tm 0 Tr (\() Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 238.35 286.47 Tm 0 Tr (int ) Tj  ET Q
+BT /F1 10.00 Tf ET
+1.000 1.000 1.000 rg
+262.35 277.80 96.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 262.35 286.47 Tm 0 Tr (destinationParam) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 358.35 286.47 Tm 0 Tr (\)) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 297.81 Tm 0 Tr ( 86  ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 58.35 297.81 Tm 0 Tr ({) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 309.15 Tm 0 Tr ( 87  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 309.15 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+82.35 300.48 72.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 82.35 309.15 Tm 0 Tr (destination ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 154.35 309.15 Tm 0 Tr (= ) Tj  ET Q
+1.000 1.000 1.000 rg
+166.35 300.48 96.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 166.35 309.15 Tm 0 Tr (destinationParam) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 262.35 309.15 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 320.48 Tm 0 Tr ( 88  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 331.82 Tm 0 Tr ( 89  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 331.82 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 82.35 331.82 Tm 0 Tr (if ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 100.35 331.82 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+106.35 323.15 54.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 106.35 331.82 Tm 0 Tr (position ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 160.35 331.82 Tm 0 Tr (< ) Tj  ET Q
+1.000 1.000 1.000 rg
+172.35 323.15 66.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 172.35 331.82 Tm 0 Tr (destination) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 238.35 331.82 Tm 0 Tr (\) {) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 343.16 Tm 0 Tr ( 90  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 343.16 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 106.35 343.16 Tm 0 Tr (cout ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 343.16 Tm 0 Tr (<< ) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 154.35 343.16 Tm 0 Tr ("Starting at floor ") Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 354.50 Tm 0 Tr ( 91  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 354.50 Tm 0 Tr (             ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 354.50 Tm 0 Tr (<< ) Tj  ET Q
+1.000 1.000 1.000 rg
+154.35 345.83 48.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 154.35 354.50 Tm 0 Tr (position) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 365.84 Tm 0 Tr ( 92  ) Tj  ET Q
+58.35 357.17 78.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 365.84 Tm 0 Tr (             ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 365.84 Tm 0 Tr (<< ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 154.35 365.84 Tm 0 Tr (endl) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 178.35 365.84 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 377.18 Tm 0 Tr ( 93  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 388.52 Tm 0 Tr ( 94  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 388.52 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 106.35 388.52 Tm 0 Tr (for ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 130.35 388.52 Tm 0 Tr (\(;) Tj  ET Q
+1.000 1.000 1.000 rg
+142.35 379.85 54.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 142.35 388.52 Tm 0 Tr (position ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 196.35 388.52 Tm 0 Tr (< ) Tj  ET Q
+1.000 1.000 1.000 rg
+208.35 379.85 66.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 208.35 388.52 Tm 0 Tr (destination) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 274.35 388.52 Tm 0 Tr (; ) Tj  ET Q
+1.000 1.000 1.000 rg
+286.35 379.85 48.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 286.35 388.52 Tm 0 Tr (position) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 334.35 388.52 Tm 0 Tr (++\) {) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 399.85 Tm 0 Tr ( 95  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 399.85 Tm 0 Tr (            ) Tj  ET Q
+1.000 1.000 1.000 rg
+130.35 391.18 60.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 130.35 399.85 Tm 0 Tr (showStatus) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 190.35 399.85 Tm 0 Tr (\(\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 411.19 Tm 0 Tr ( 96  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 411.19 Tm 0 Tr (        ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 106.35 411.19 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 422.53 Tm 0 Tr ( 97  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 422.53 Tm 0 Tr (    ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 82.35 422.53 Tm 0 Tr (} ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 94.35 422.53 Tm 0 Tr (else if ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 142.35 422.53 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+148.35 413.86 54.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 148.35 422.53 Tm 0 Tr (position ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 202.35 422.53 Tm 0 Tr (> ) Tj  ET Q
+1.000 1.000 1.000 rg
+214.35 413.86 66.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 214.35 422.53 Tm 0 Tr (destination) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 280.35 422.53 Tm 0 Tr (\) {) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 433.87 Tm 0 Tr ( 98  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 433.87 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 106.35 433.87 Tm 0 Tr (cout ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 433.87 Tm 0 Tr (<< ) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 154.35 433.87 Tm 0 Tr ("Starting at floor ") Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 445.21 Tm 0 Tr ( 99  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 445.21 Tm 0 Tr (             ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 445.21 Tm 0 Tr (<< ) Tj  ET Q
+1.000 1.000 1.000 rg
+154.35 436.54 48.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 154.35 445.21 Tm 0 Tr (position) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 456.55 Tm 0 Tr (100  ) Tj  ET Q
+58.35 447.88 78.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 456.55 Tm 0 Tr (             ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 456.55 Tm 0 Tr (<< ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 154.35 456.55 Tm 0 Tr (endl) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 178.35 456.55 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 467.89 Tm 0 Tr (101  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 479.22 Tm 0 Tr (102  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 479.22 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 106.35 479.22 Tm 0 Tr (for ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 130.35 479.22 Tm 0 Tr (\(;) Tj  ET Q
+1.000 1.000 1.000 rg
+142.35 470.55 54.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 142.35 479.22 Tm 0 Tr (position ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 196.35 479.22 Tm 0 Tr (> ) Tj  ET Q
+1.000 1.000 1.000 rg
+208.35 470.55 66.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 208.35 479.22 Tm 0 Tr (destination) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 274.35 479.22 Tm 0 Tr (; ) Tj  ET Q
+1.000 1.000 1.000 rg
+286.35 470.55 48.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 286.35 479.22 Tm 0 Tr (position) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 334.35 479.22 Tm 0 Tr (--\) {) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 490.56 Tm 0 Tr (103  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 490.56 Tm 0 Tr (            ) Tj  ET Q
+1.000 1.000 1.000 rg
+130.35 481.89 60.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 130.35 490.56 Tm 0 Tr (showStatus) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 190.35 490.56 Tm 0 Tr (\(\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 501.90 Tm 0 Tr (104  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 501.90 Tm 0 Tr (        ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 106.35 501.90 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 513.24 Tm 0 Tr (105  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 513.24 Tm 0 Tr (    ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 82.35 513.24 Tm 0 Tr (} ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 94.35 513.24 Tm 0 Tr (else ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 124.35 513.24 Tm 0 Tr ({) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 524.58 Tm 0 Tr (106  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 524.58 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 106.35 524.58 Tm 0 Tr (cout ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 524.58 Tm 0 Tr (<< ) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 154.35 524.58 Tm 0 Tr ("The elevator is already on that floor.\\n") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 406.35 524.58 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 535.92 Tm 0 Tr (107  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 535.92 Tm 0 Tr (    ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 82.35 535.92 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 547.26 Tm 0 Tr (108  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 547.26 Tm 0 Tr (    ) Tj  ET Q
+1.000 1.000 1.000 rg
+82.35 538.59 60.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 82.35 547.26 Tm 0 Tr (showStatus) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 142.35 547.26 Tm 0 Tr (\(\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 558.59 Tm 0 Tr (109  ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 58.35 558.59 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 569.93 Tm 0 Tr (110  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 581.27 Tm 0 Tr (111  ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 58.35 581.27 Tm 0 Tr (int ) Tj  ET Q
+BT /F1 10.00 Tf ET
+1.000 1.000 1.000 rg
+82.35 572.60 48.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 82.35 581.27 Tm 0 Tr (elevator) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 130.35 581.27 Tm 0 Tr (::) Tj  ET Q
+1.000 1.000 1.000 rg
+142.35 572.60 84.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 142.35 581.27 Tm 0 Tr (returnPosition) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 226.35 581.27 Tm 0 Tr (\(\)) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 592.61 Tm 0 Tr (112  ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 58.35 592.61 Tm 0 Tr ({) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 603.95 Tm 0 Tr (113  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 603.95 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 82.35 603.95 Tm 0 Tr (return ) Tj  ET Q
+BT /F1 10.00 Tf ET
+1.000 1.000 1.000 rg
+124.35 595.28 48.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 124.35 603.95 Tm 0 Tr (position) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 172.35 603.95 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 615.29 Tm 0 Tr (114  ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 58.35 615.29 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 626.63 Tm 0 Tr (115  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 637.96 Tm 0 Tr (116  ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 58.35 637.96 Tm 0 Tr (void ) Tj  ET Q
+BT /F1 10.00 Tf ET
+1.000 1.000 1.000 rg
+88.35 629.29 48.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 88.35 637.96 Tm 0 Tr (elevator) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 637.96 Tm 0 Tr (::) Tj  ET Q
+1.000 1.000 1.000 rg
+148.35 629.29 60.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 148.35 637.96 Tm 0 Tr (showStatus) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 208.35 637.96 Tm 0 Tr (\(\)) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 649.30 Tm 0 Tr (117  ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 58.35 649.30 Tm 0 Tr ({) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 660.64 Tm 0 Tr (118  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 660.64 Tm 0 Tr (    ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 82.35 660.64 Tm 0 Tr (if ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 100.35 660.64 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+106.35 651.97 54.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 106.35 660.64 Tm 0 Tr (position ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 160.35 660.64 Tm 0 Tr (< ) Tj  ET Q
+1.000 1.000 1.000 rg
+172.35 651.97 66.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 172.35 660.64 Tm 0 Tr (destination) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 238.35 660.64 Tm 0 Tr (\) {) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 671.98 Tm 0 Tr (119  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 671.98 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 106.35 671.98 Tm 0 Tr (cout ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 671.98 Tm 0 Tr (<< ) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 154.35 671.98 Tm 0 Tr ("Going up - now at floor ") Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 683.32 Tm 0 Tr (120  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 683.32 Tm 0 Tr (             ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 683.32 Tm 0 Tr (<< ) Tj  ET Q
+1.000 1.000 1.000 rg
+154.35 674.65 48.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 154.35 683.32 Tm 0 Tr (position) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 202.35 683.32 Tm 0 Tr (+) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 208.35 683.32 Tm 0 Tr (1) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 694.66 Tm 0 Tr (121  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 694.66 Tm 0 Tr (             ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 694.66 Tm 0 Tr (<< ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 154.35 694.66 Tm 0 Tr (endl) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 178.35 694.66 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 706.00 Tm 0 Tr (122  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 706.00 Tm 0 Tr (    ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 82.35 706.00 Tm 0 Tr (} ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 94.35 706.00 Tm 0 Tr (else if ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 142.35 706.00 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+148.35 697.33 54.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 148.35 706.00 Tm 0 Tr (position ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 202.35 706.00 Tm 0 Tr (> ) Tj  ET Q
+1.000 1.000 1.000 rg
+214.35 697.33 66.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 214.35 706.00 Tm 0 Tr (destination) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 280.35 706.00 Tm 0 Tr (\) {) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 717.33 Tm 0 Tr (123  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 717.33 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 106.35 717.33 Tm 0 Tr (cout ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 717.33 Tm 0 Tr (<< ) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 154.35 717.33 Tm 0 Tr ("Going down - now at floor ") Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 728.67 Tm 0 Tr (124  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 728.67 Tm 0 Tr (             ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 728.67 Tm 0 Tr (<< ) Tj  ET Q
+1.000 1.000 1.000 rg
+154.35 720.00 48.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 154.35 728.67 Tm 0 Tr (position) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 202.35 728.67 Tm 0 Tr (-) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 208.35 728.67 Tm 0 Tr (1) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 740.01 Tm 0 Tr (125  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 740.01 Tm 0 Tr (             ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 740.01 Tm 0 Tr (<< ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 154.35 740.01 Tm 0 Tr (endl) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 178.35 740.01 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 751.35 Tm 0 Tr (126  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 751.35 Tm 0 Tr (    ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 82.35 751.35 Tm 0 Tr (} ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 94.35 751.35 Tm 0 Tr (else ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 124.35 751.35 Tm 0 Tr ({) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 762.69 Tm 0 Tr (127  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 762.69 Tm 0 Tr (        ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 106.35 762.69 Tm 0 Tr (cout ) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 762.69 Tm 0 Tr (<< ) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 154.35 762.69 Tm 0 Tr ("Stopping at floor ") Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 774.03 Tm 0 Tr (128  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 774.03 Tm 0 Tr (             ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 774.03 Tm 0 Tr (<< ) Tj  ET Q
+1.000 1.000 1.000 rg
+154.35 765.36 48.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 154.35 774.03 Tm 0 Tr (position) Tj  ET Q
+Q
+
+endstream
+endobj
+7 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/Annots []
+/Contents 8 0 R>>
+endobj
+8 0 obj
+<</Length 883>>
+stream
+q
+1.000 0.000 0.000 -1.000 0.000 841.890 cm
+2 J
+0.57 w
+BT /F1 10.00 Tf ET
+0 G
+1.000 1.000 1.000 rg
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 37.02 Tm 0 Tr (129  ) Tj  ET Q
+58.35 28.35 78.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 37.02 Tm 0 Tr (             ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 136.35 37.02 Tm 0 Tr (<< ) Tj  ET Q
+BT /F2 10.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 154.35 37.02 Tm 0 Tr (endl) Tj  ET Q
+BT /F1 10.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 178.35 37.02 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 48.36 Tm 0 Tr (130  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 58.35 48.36 Tm 0 Tr (    ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 82.35 48.36 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 59.70 Tm 0 Tr (131  ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 58.35 59.70 Tm 0 Tr (}) Tj  ET Q
+Q
+
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R 5 0 R 7 0 R ]
+/Count 3
+/MediaBox [0 0 595.276 841.890]
+>>
+endobj
+9 0 obj
+<</Type /Font
+/BaseFont /Courier-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+>>
+endobj
+10 0 obj
+<</Type /Font
+/BaseFont /Courier
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F2 9 0 R
+/F1 10 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+11 0 obj
+<<
+/Names []
+>>
+endobj
+12 0 obj
+<<
+/Producer (þÿ w x P d f D o c u m e n t   0 . 9 . 4)
+/CreationDate (D:20150319113550)
+>>
+endobj
+13 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+>>
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000052205 00000 n 
+0000052500 00000 n 
+0000000009 00000 n 
+0000000098 00000 n 
+0000023640 00000 n 
+0000023729 00000 n 
+0000051184 00000 n 
+0000051273 00000 n 
+0000052306 00000 n 
+0000052405 00000 n 
+0000052615 00000 n 
+0000052647 00000 n 
+0000052755 00000 n 
+trailer
+<<
+/Size 14
+/Root 13 0 R
+/Info 12 0 R
+>>
+startxref
+52859
+%%EOF

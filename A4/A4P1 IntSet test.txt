@@ -1,0 +1,51 @@
+void testIntSet()
+{
+	IntSet set1, set2, set3, set4, set5;
+	bool isEqual, isSubSet;
+
+	//-= and += fail test
+	cout << "test IntSet operators fails\n";
+	cout << "set1 = " << set1 << endl; //{}
+	set1 += 0;
+	cout << "set1 = " << set1 << endl; //{0}
+	set1 += 0;
+	cout << "set1 = " << set1 << endl; //{0}
+	set1 -= 1;
+	cout << "set1 = " << set1 << endl; //{0}
+	set1 += 10;
+	cout << "set1 = " << set1 << endl; //{}
+	set2 += -1;
+	cout << "set2 = " << set2 << endl; //{}
+	set3 += 0;
+	set3 += 1;
+	set3 += 2;
+	set4 += 3;
+	set4 += 4;
+	set4 += 5;
+	cout << "set5 = set4 - set4 = " << set5 << endl; //{}
+	isEqual = set3 == set5;
+	cout << "isEqual = set3 == set5 = " << isEqual << endl;	//false
+	isSubSet = set3 <= set4;
+	cout << "isSubSet = set1 <= set3 = " << isSubSet << endl; //false
+
+	IntSet setp1, setp2, setp3, setp4, setp5;
+	bool isEqualP, isSubSetP;
+
+	//test for pass
+	cout << "\ntest IntSet operators pass\n";
+	cout << "set1 = " << setp1 << endl;
+	setp1 += 0;
+	cout << "set1 = " << setp1 << endl; //{0}
+	setp2 += 1;
+	cout << "set2 = " << setp2 << endl; //{1}
+	setp3 = setp1 + setp2;
+	cout << "setp3 = setp1 + setp2 = " << setp3 << endl; //{0, 1}
+	setp4 = !setp3;
+	cout << "setp4 = !setp3 = " << setp4 << endl; //{2, 3, 4, 5, 6, 7, 8, 9}
+	setp5 = setp3 - setp4;
+	cout << "setp5 = setp3 - setp4 = " << setp5 << endl; //{0, 1}
+	isEqualP = setp3 == setp5;
+	cout << "isEqualP = set3 == set5 = " << isEqualP << endl;	//true
+	isSubSetP = setp1 <= setp3;
+	cout << "isSubSetP = setp1 <= setp3 = " << isSubSetP << endl; //true
+}
